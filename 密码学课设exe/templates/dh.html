@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>第一小队</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="static/assets/vendor/owl.carousel/static/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+  <link href="static/assets/css/dh.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Mamba - v2.3.0
+  * Template URL: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="/index"><span>ECC</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/index">首页</a></li>
+          <li><a href="/sm2">SM2</a></li>
+          <li><a href="/elgamal">EC-ElGamal</a></li>
+          <li><a href="/dh">EC-DH</a></li>
+          <li><a href="/team">团队</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+    </header><!-- End Header -->
+    <main id="main">
+      <h3 class="page-title">EC DH密钥交换</h3>
+      <!-- <h3 class="page-title">{{par}}</h3> -->
+      
+          <div class="form-container">
+              <form action="" method="POST" id="form-check">
+                <div class="form-group">
+                    <textarea id="pars" name="par_1" readonly="readonly" rows="3" class="form-control" placeholder="说明
+选择的椭圆曲线：y^2 = x^3 + 7(mod 115792089237316195423570985008687907853269984665640564039457584007908834671663)
+The order of E is: 115792089237316195423570985008687907852837564279074904382605163141518161494337
+The point we're using is:(55066263022277343669578718895168534326250603453777594175500187360389116729240, 32670510020758816978083085130507043184471273380659243275938904335757337482424)"></textarea>
+                </div>
+                <div class="form-group">
+                  <textarea id="private_keyA" name="private_keyA" rows="1" class="form-control" placeholder="A的私钥"></textarea>
+                </div>
+                <div class="form-group">
+                  <textarea id="public_keyA" name="public_keyA" rows="1" class="form-control" placeholder="A的公钥"></textarea>
+                </div>
+                <div class="form-group">
+                  <textarea id="private_keyB" name="private_keyB" rows="1" class="form-control" placeholder="B的私钥"></textarea>
+                </div>
+                <div class="form-group">
+                  <textarea id="public_keyB" name="public_keyB" rows="1" class="form-control" placeholder="B的公钥"></textarea>
+                </div>
+                <div class="form-group">
+                  <textarea id="keyAB" name="keyAB" rows="1" class="form-control" placeholder="exchanged value"></textarea>
+                </div>
+            </form>
+            <div class="form-group">
+              <textarea id="messageA" name="messageA" class="form-control" rows="1" placeholder="A要发送的信息" ></textarea>
+            </div>
+            <div class="form-group">
+              <textarea id="ciphertextA" name="ciphertextA" class="form-control" rows="1" placeholder="加密后的信息"></textarea>
+            </div>
+            <div class="form-group">
+              <textarea id="messageB" name="messageB" class="form-control" rows="1" placeholder="B解密后的信息"></textarea>
+            </div>
+            <div class="form-group">
+                <button id="dh-genkey" class="btn btn-success mb-3">生成密钥</button>
+                <button id="dh-test" class="btn btn-primary mb-3">测试</button>
+                <button id="dh-clearkey" class="btn btn-danger mb-3">清空密钥</button>
+                <button id="dh-clear" class="btn btn-danger mb-3">清空结果</button>
+            </div>
+    </main><!-- End #main -->
+  
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Mamba</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/ -->
+        Designed by <a href="http://dragonliu.tk/" target="_blank">Dragon Liu</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="static/assets/js/spig.js"></script>
+  <script src="static/assets/js/dh.js"></script>
+  <!--博客精灵 start*-->
+  <div id="spig" class="spig">
+      <div id="message">……</div>
+      <div id="mumu" class="mumu"></div>
+  </div>
+  
+  <script type="text/javascript">
+  var isindex=false;
+  var title="";
+  var visitor="";
+  </script>
+  <!--精灵end*-->
+</body>
+
+</html>
