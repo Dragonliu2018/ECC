@@ -6,8 +6,6 @@
 from flask import Flask,render_template,request,redirect,url_for,session,g,flash,\
     current_app,jsonify
 import json, random
-# import numpy as np
-# import ecc#测试ecc
 import SM2#SM2
 from Elgamal import ELGAMAL#Elgamal
 import DH#DH
@@ -23,7 +21,6 @@ def home():
 
 @app.route('/index')
 def home1():
-    # return render_template("index.html")
     return home()
 
 #SM2界面
@@ -36,7 +33,11 @@ def sm2():
 @app.route('/sm2-data',methods=['GET','POST'])
 def sm2_data():
     op_type = request.form['type']
-    if op_type == 'encode':
+    if op_type == "detail":
+        message  = request.form['message']
+        ret_message = SM2.detail(message)
+        return jsonify({"ret_message": ret_message}) 
+    elif op_type == 'encode':
         public_key = request.form['public_key'] 
         private_key = request.form['private_key'] 
         message  = request.form['message'].encode('utf-8')
@@ -127,11 +128,14 @@ def team():
     return render_template("team.html")
 
 
-@app.route('/test')
-def test():
-    return render_template("test.html")
+@app.route('/sm2&rsa.txt')
+def sm2_rsa():
+    return redirect(url_for('static',filename='sm2&rsa.txt'))
 
-
+@app.route('/sm2&elgamal.txt')
+def sm2_elgamal():
+    return redirect(url_for('static',filename='sm2&elgamal.txt'))
 
 if __name__ == '__main__':
+    # app.run(port=8003, debug=True)
     app.run(host="0.0.0.0", port=8003, debug=True)

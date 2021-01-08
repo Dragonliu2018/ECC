@@ -2,7 +2,7 @@
 jQuery(document).ready(function ($) {
     $("#spig").mousedown(function (e) {
         if(e.which==3){
-        	showMessage("秘密通道:<br />  <a href=\"https://github.com/Dragonliu2018\" >Dragon Liu</a>  ",10000);
+        	showMessage("秘密通道:<br />  <a href=\"https://github.com/Dragonliu2018/ECC\" >项目源码</a>  ",10000);
 		}
 	});
 	$("#spig").bind("contextmenu", function(e) {
@@ -19,24 +19,53 @@ jQuery(document).ready(function ($) {
 
 //鼠标在消息上时
 jQuery(document).ready(function ($) {
-    var x = document.getElementById("sm2-encode");
-    // x.addEventListener("click", myFunction);
-    x.addEventListener("click", someOtherFunction);
+    var sm2 = document.getElementById("sm2-encode");
+    sm2.addEventListener("click", someOtherFunction);
     function someOtherFunction() {
-        showMessage ("加密需要耗费一定时间，请耐心等待~", 20000);
+        showMessage ("加密需要耗费一定时间，请耐心等待~", 1000);
     }
 });
-
 //鼠标在消息上时
 jQuery(document).ready(function ($) {
-    var x = document.getElementById("sm2-decode");
+    var elg = document.getElementById("elgamal-encode");
     // x.addEventListener("click", myFunction);
-    x.addEventListener("click", someOtherFunction);
+    elg.addEventListener("click", someOtherFunction);
+    function someOtherFunction() {
+        showMessage ("加密需要耗费一定时间，请耐心等待~", 1000);
+    }
+});
+//鼠标在消息上时
+jQuery(document).ready(function ($) {
+    var sm2 = document.getElementById("sm2-decode");
+    sm2.addEventListener("click", someOtherFunction);
     function someOtherFunction() {
     showMessage ("解密需要耗费一定时间，请耐心等待~", 1000);
     }
 });
-
+//鼠标在消息上时
+jQuery(document).ready(function ($) {
+    var elg = document.getElementById("elgamal-decode");
+    elg.addEventListener("click", someOtherFunction);
+    function someOtherFunction() {
+        showMessage ("解密需要耗费一定时间，请耐心等待~", 1000);
+    }
+});
+//鼠标在消息上时
+jQuery(document).ready(function ($) {
+    var dh = document.getElementById("dh-test");
+    dh.addEventListener("click", someOtherFunction);
+    function someOtherFunction() {
+        showMessage ("测试需要耗费一定时间，请耐心等待~", 1000);
+    }
+});
+//鼠标在消息上时
+jQuery(document).ready(function ($) {
+    var dh = document.getElementById("sm2-detail");
+    dh.addEventListener("click", someOtherFunction);
+    function someOtherFunction() {
+        showMessage ("算法求解需要耗费一定时间，请耐心等待~", 2000);
+    }
+});
 //鼠标在上方时
 jQuery(document).ready(function ($) {
     $(".mumu").mouseover(function () {

@@ -27,6 +27,7 @@ $(document).ready(function(){
     $("#elgamal-clear").click(function(){
         document.getElementById("message1").value="";
         document.getElementById("ciphertext").value="";
+        document.getElementById("message2").value="";
     });
     //加密
     $("#elgamal-encode").click(function(){
@@ -46,7 +47,7 @@ $(document).ready(function(){
                 document.getElementById("ciphertext").value=data["ciphertext1"];
             },
             error:function () {
-                document.getElementById("ciphertext").value="error";
+                // document.getElementById("ciphertext").value="error";
                 alert("加密出现问题，请检查密钥及明文！！！！");
             }
         });
@@ -67,10 +68,10 @@ $(document).ready(function(){
             data: data,
             dataType:'json',
             success:function(data){ //后端返回的json数据（此处data为json对象）
-                document.getElementById("message1").value=data["message"];
+                document.getElementById("message2").value=data["message"];
             },
             error:function () {
-                document.getElementById("message1").value="error"
+                // document.getElementById("message1").value="error"
                 alert("解密出现问题，请检查密钥及密文！！！！");
             }
         });
